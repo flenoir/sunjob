@@ -20,7 +20,11 @@
 
     <!-- Left Nav Section -->
     <ul class="left">
+     <% if user_signed_in? %>
+    <li><%= link_to "Add a job", new_job_path, class: 'button success radius medium' %></li>
+    <% else %>
       <li><a href="#">Left Nav Button</a></li>
+      <% end %>
     </ul>
   </section>
 </nav>
