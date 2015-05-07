@@ -1,0 +1,23 @@
+<%= render 'header' %>
+
+    <div class="row">
+      <div class="small-8 column">
+        <!-- main content -->
+      </div>
+	      <div class="small-4 column">
+	       <% @jobs.each do |job| %>
+			<div class="job">
+			<h2><%= link_to job.title, job.url %></h2>
+			<p><%= job.company %></p>
+			<p><%= link_to "modifier", edit_job_path(job) %></p>
+			<p><%= link_to "supprimer", job, method: :delete, data: { confirm: 'êtes vous sûr ?' }%></p>
+			</div>
+			<% end %>
+
+			<p><%= paginate @jobs %></p>
+	      </div>
+    </div>
+  
+
+
+<%= render 'footer' %>

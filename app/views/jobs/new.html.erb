@@ -1,0 +1,13 @@
+<%= render 'header' %>
+
+<h1>Ajouter un Job</h1>
+<p>Find me in app/views/jobs/new.html.erb</p>
+
+<%= simple_form_for @job do |form| %>
+<%= form.input :title, label: "Intitulé du Job" %>
+<%= form.input :company, label: "Votre entreprise" %>
+<%= form.input :url, label: "Lien vers le job" %>
+<%= form.button :submit %>
+<% end %>
+
+<%= link_to "Retour à la page d'accueil", root_path %>
