@@ -21,3 +21,6 @@ module Djobs
     # config.i18n.default_locale = :de
   end
 end
+
+# Devise, If you are deploying on Heroku with Rails 3.2 only, you may want to set:
+# config.assets.initialize_on_precompile = false

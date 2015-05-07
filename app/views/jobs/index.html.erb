@@ -1,21 +1,35 @@
 <%= render 'header' %>
+<%= render 'flash' %>
 
     <div class="row">
-      <div class="small-8 column">
-        <!-- main content -->
+    <div class="small-2 column">
+        border left
       </div>
-	      <div class="small-4 column">
-	       <% @jobs.each do |job| %>
-			<div class="job">
-			<h2><%= link_to job.title, job.url %></h2>
-			<p><%= job.company %></p>
-			<p><%= link_to "modifier", edit_job_path(job) %></p>
-			<p><%= link_to "supprimer", job, method: :delete, data: { confirm: 'êtes vous sûr ?' }%></p>
-			</div>
-			<% end %>
+    
 
-			<p><%= paginate @jobs %></p>
-	      </div>
+      	<% if user_signed_in? %>
+
+		      <div class="small-8 column">
+		       <% @jobs.each do |job| %>
+				<div class="job">
+				<h2><%= link_to job.title, job.url %></h2>
+				<p><%= job.company %></p>
+				<p><%= link_to "modifier", edit_job_path(job) %></p>
+				<p><%= link_to "supprimer", job, method: :delete, data: { confirm: 'êtes vous sûr ?' }%></p>
+				</div>
+				<% end %>
+				<p><%= paginate @jobs %></p>
+		      </div>
+		      <% else %>
+
+		<div class="small-8 column">
+		<h1>Please login In</h1>
+		</div>
+		<% end %>
+
+	       <div class="small-2 column">
+        border right
+      </div>
     </div>
   
 
