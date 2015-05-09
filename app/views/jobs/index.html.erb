@@ -15,7 +15,7 @@
 				<h2><%= link_to job.title, job_path(job) %></h2>
 				<p><%= link_to job.company, job.url %></p>
 				<p><%= link_to "voir", job_path(job) %></p>
-				<p>publiée le <%= job.created_at.strftime("%A %d %B %Y") %></p>
+				<p>publiée le <%= job.created_at.strftime("%A %d %B %Y à %H:%M") %></p>
 				</div>
 				<% end %>
 				<p><%= paginate @jobs %></p>
