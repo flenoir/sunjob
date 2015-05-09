@@ -1,14 +1,12 @@
-<%= render 'header' %>
-<%= render 'messages' %>
+<% if user_signed_in? %>
+
+	<%= render 'header' %>
+	<%= render 'messages' %>
 
     <div class="row">
     <div class="small-2 column">
-        border left
-      </div>
-    
-
-      	<% if user_signed_in? %>
-
+    border left
+    </div>
 		      <div class="small-8 column">
 		       <% @jobs.each do |job| %>
 				<div class="job">
@@ -20,19 +18,28 @@
 				<% end %>
 				<p><%= paginate @jobs %></p>
 		      </div>
-		      <% else %>
+ 
 
-		<div class="small-8 column">
-		<h1>Please login In</h1>
+ 	<div class="small-2 column">
+     border right
+     </div>
+
+	<%= render 'footer' %>
+
+<% else %>
+
+		<div class="homelogin">
+		<h1>Connectez-Vous !</h1>
+		<%= link_to "Sign IN", new_user_registration_path, class: 'button success radius medium' %>
+		<%= link_to "LOG IN", new_user_session_path , class: 'button alert radius medium' %>
 		</div>
-		<% end %>
 
-	       <div class="small-2 column">
-        border right
-      </div>
+<% end %>
+
+	      
     </div>
   
 
 
-<%= render 'footer' %>
+
 
