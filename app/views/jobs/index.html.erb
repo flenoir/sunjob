@@ -1,5 +1,5 @@
 <%= render 'header' %>
-<%= render 'flash' %>
+<%= render 'messages' %>
 
     <div class="row">
     <div class="small-2 column">
@@ -12,10 +12,10 @@
 		      <div class="small-8 column">
 		       <% @jobs.each do |job| %>
 				<div class="job">
-				<h2><%= link_to job.title, job.url %></h2>
-				<p><%= job.company %></p>
-				<p><%= link_to "modifier", edit_job_path(job) %></p>
-				<p><%= link_to "supprimer", job, method: :delete, data: { confirm: 'êtes vous sûr ?' }%></p>
+				<h2><%= link_to job.title, job_path(job) %></h2>
+				<p><%= link_to job.company, job.url %></p>
+				<p><%= link_to "voir", job_path(job) %></p>
+				<p>publiée le <%= job.created_at.strftime("%A %d %B %Y") %></p>
 				</div>
 				<% end %>
 				<p><%= paginate @jobs %></p>
