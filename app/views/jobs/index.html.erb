@@ -1,37 +1,39 @@
 <% if user_signed_in? %>
+	<div class="container">
 
-	<%= render 'header' %>
-	<%= render 'messages' %>
+		<%= render 'header' %>
+		<%= render 'messages' %>
 
-    <div class="row">
-    <div class="small-2 column">
-    border left
-    </div>
-		      <div class="small-8 column">
-		       <% @jobs.each do |job| %>
-				<div class="job">
-				<h2><%= link_to job.title, job_path(job) %></h2>
-				<p><%= link_to job.company, job.url %></p>
-				<p><%= link_to "voir", job_path(job) %></p>
-				<p>publiée le <%= job.created_at.strftime("%A %d %B %Y à %H:%M") %></p>
-				</div>
-				<% end %>
-				<p><%= paginate @jobs %></p>
-		      </div>
- 
+	    <div class="row">
+	    <div class="small-2 column">
+	    border left
+	    </div>
+			      <div class="small-8 column">
+			       <% @jobs.each do |job| %>
+					<div class="job">
+					<h2><%= link_to job.title, job_path(job) %></h2>
+					<p><%= link_to job.company, job.url %></p>
+					<p><%= link_to "voir", job_path(job) %></p>
+					<p>publiée le <%= job.created_at.strftime("%A %d %B %Y à %H:%M") %></p>
+					</div>
+					<% end %>
+					<p><%= paginate @jobs %></p>
+			      </div>
+	 
 
- 	<div class="small-2 column">
-     border right
-     </div>
+	 	<div class="small-2 column">
+	     border right
+	     </div>
 
-	<%= render 'footer' %>
-
+		<%= render 'footer' %>
+	</div>
 <% else %>
 
 		<div class="homelogin">
+		<h1>SunJob, tous les jobs du Sud de la France</h1>
 		<h1>Connectez-Vous !</h1>
-		<%= link_to "Sign IN", new_user_registration_path, class: 'button success radius medium' %>
-		<%= link_to "LOG IN", new_user_session_path , class: 'button alert radius medium' %>
+		<%= link_to "Inscription", new_user_registration_path, class: 'button success radius medium' %>
+		<%= link_to "Connection", new_user_session_path , class: 'button alert radius medium' %>
 		</div>
 
 <% end %>
