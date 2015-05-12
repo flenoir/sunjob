@@ -3,6 +3,8 @@
 <%= @job.title %>
 <%= @job.company %>
 <%= @job.url %>
+<p><%= link_to "modifier", edit_job_path(@job) %></p>
+<p><%= link_to "supprimer", @job, method: :delete, data: { confirm: 'êtes vous sûr ?' }%></p>
 
 
 <%= render 'footer' %>

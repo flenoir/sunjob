@@ -11,6 +11,7 @@
     <!-- Right Nav Section -->
     <ul class="right">
       <% if user_signed_in? %>
+      <li> <%= link_to "Modifier mon compte", edit_user_registration_path %></li>
       <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
       <% else %>
       <li class="active"><%= link_to 'Sign In', new_user_registration_path %></li>
