@@ -34,6 +34,7 @@
 		<h1>Connectez-Vous !</h1>
 		<%= link_to "Inscription", new_user_registration_path, class: 'button info radius medium' %>
 		<%= link_to "Connection", new_user_session_path , class: 'button secondary radius medium' %>
+		<%= link_to "Twitter", user_omniauth_authorize_path(:twitter), class: 'button primary radius medium' %>
 		</div>
 
 <% end %>

@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.6'
 
 gem 'foundation-rails', '~> 5.5.0'
+gem 'omniauth-twitter'
 
 
 gem 'sass-rails', '~>5.0.0'
